@@ -1,0 +1,15 @@
+[package]
+name = "audio-wire"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.20", features = ["derive"] }
+cpal = "0.15.3"
+hound = "3.5.1"
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+
+# windows only deps
+[target.'cfg(windows)'.dependencies]
+wasapi = "*"
